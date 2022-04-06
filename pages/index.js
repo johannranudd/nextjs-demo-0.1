@@ -1,19 +1,15 @@
 import Head from 'next/head';
-import { StyledDiv } from '../styles/index.styles';
-// import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { getAllEvents } from '../dummy-data';
-import EventList from '../components/events/event-list';
-import { useRouter } from 'next/router';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+  .section-center {
+    display: grid;
+    place-items: center;
+    padding-top: 5rem;
+  }
+`;
 
 export default function Home() {
-  const allEvents = getAllEvents();
-  const router = useRouter();
-
-  const handleSingleEvent = (id) => {
-    router.push(`/events/${id}`);
-  };
-
   return (
     <StyledDiv>
       <Head>
@@ -22,14 +18,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section className='section-center'>
-        <div className='header-container'>
-          <h1>hello</h1>
-          <Link href={`/events`}>go to page</Link>
-        </div>
-        <EventList
-          allEvents={allEvents}
-          handleSingleEvent={handleSingleEvent}
-        />
+        <h1>Home</h1>
       </section>
     </StyledDiv>
   );
