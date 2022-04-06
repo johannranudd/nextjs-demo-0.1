@@ -24,3 +24,9 @@ ul {
 img {
   width: 100%;
 }
+
+.section-center {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+}

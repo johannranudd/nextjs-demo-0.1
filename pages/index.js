@@ -1,7 +1,19 @@
 import Head from 'next/head';
 import { StyledDiv } from '../styles/index.styles';
+// import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { getAllEvents } from '../dummy-data';
+import EventList from '../components/events/event-list';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const allEvents = getAllEvents();
+  const router = useRouter();
+
+  const handleSingleEvent = (id) => {
+    router.push(`/events/${id}`);
+  };
+
   return (
     <StyledDiv>
       <Head>
@@ -10,7 +22,14 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section className='section-center'>
-        <h1>hello</h1>
+        <div className='header-container'>
+          <h1>hello</h1>
+          <Link href={`/events`}>go to page</Link>
+        </div>
+        <EventList
+          allEvents={allEvents}
+          handleSingleEvent={handleSingleEvent}
+        />
       </section>
     </StyledDiv>
   );
