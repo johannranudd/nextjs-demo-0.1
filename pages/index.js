@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const StyledDiv = styled.div`
   .section-center {
@@ -19,6 +20,9 @@ export default function Home() {
       </Head>
       <section className='section-center'>
         <h1>Home</h1>
+        <div>
+          <Link href={`/events`}>Browse All Events</Link>
+        </div>
       </section>
     </StyledDiv>
   );

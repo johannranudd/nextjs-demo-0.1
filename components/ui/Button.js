@@ -12,11 +12,23 @@ const StyledA = styled.a`
   }
 `;
 
+const StyledButton = styled.button`
+  background: transparent;
+  border: none;
+`;
+
 const Button = (props) => {
+  if (props.link) {
+    return (
+      <Link href={props.link}>
+        <StyledA>{props.children}</StyledA>
+      </Link>
+    );
+  }
   return (
-    <Link href={props.link}>
+    <StyledButton onClick={props.onClick}>
       <StyledA>{props.children}</StyledA>
-    </Link>
+    </StyledButton>
   );
 };
 

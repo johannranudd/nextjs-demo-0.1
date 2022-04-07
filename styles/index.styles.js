@@ -11,6 +11,7 @@ export const StyledDiv = styled.div`
     }
     ul {
       display: grid;
+      place-items: center;
       grid-gap: 2rem;
       li {
         img {

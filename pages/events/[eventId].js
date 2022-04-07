@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Button from '../../components/ui/Button';
 import { getAllEvents } from '../../dummy-data';
 import { StyledDiv } from '../../styles/events.styles/events.index';
 
@@ -13,6 +14,7 @@ const EventIdPage = () => {
     }
   });
   const { image, title, description, id } = filteredEvents[0];
+
   return (
     <StyledDiv>
       <section className='section-center'>
@@ -26,6 +28,7 @@ const EventIdPage = () => {
           <p>{title}</p>
           <p>{description}</p>
         </div>
+        <Button>random button</Button>
       </section>
     </StyledDiv>
   );
